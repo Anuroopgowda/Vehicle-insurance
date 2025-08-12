@@ -11,3 +11,34 @@ class DataValidationArtifact:
     validation_status:bool
     message: str
     validation_report_file_path: str
+
+@dataclass
+class DataTransformationArtifact:
+    transformed_object_file_path:str 
+    transformed_train_file_path:str
+    transformed_test_file_path:str
+
+@dataclass
+class ClassificationMetricArtifact:
+    f1_score:float
+    precision_score:float
+    recall_score:float
+
+@dataclass
+class ModelTrainerArtifact:
+    trained_model_file_path:str 
+    metric_artifact:ClassificationMetricArtifact
+
+@dataclass
+class ModelEvaluationArtifact:
+    is_model_accepted: bool
+    changed_accuracy: float
+    hf_model_path: str           # Hugging Face model file path or repo URL
+    trained_model_path: str
+        # Direct link to model file on Hugging Face
+
+@dataclass
+class ModelPusherArtifact:
+    hf_repo_id: str       # e.g. "Anuroopgowda/vehicle-insurance-model"
+    hf_model_file_name: str  # e.g. "model.pkl"
+    model_url: str    

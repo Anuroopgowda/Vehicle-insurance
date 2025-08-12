@@ -10,6 +10,7 @@ from_root
 dill
 certifi
 PyYAML
+huggingface_hub
 boto3
 mypy-boto3-s3
 botocore
