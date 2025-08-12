@@ -71,5 +71,5 @@ class ModelPusherConfig:
 
 @dataclass
 class VehiclePredictorConfig:
-    model_file_path: str = "model.pkl"
-    repo_id: str = "Anuroopgowda/vehicle-insurance-model"
+    hf_model_file_path: str = "model.pkl"
+    hf_repo_id: str = "Anuroopgowda/vehicle-insurance-model"

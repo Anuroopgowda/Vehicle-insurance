@@ -79,11 +79,17 @@ class VehicleDataClassifier:
             logging.info("Entered predict method of VehicleDataClassifier class")
 
             # Download model from Hugging Face
+            # model_path = hf_hub_download(
+            #     repo_id=self.prediction_pipeline_config.hf_repo_id,  # e.g. "username/vehicle-insurance-model"
+            #     filename="model.pkl",  # file name you pushed
+            #     repo_type="model"
+            # )
             model_path = hf_hub_download(
-                repo_id=self.prediction_pipeline_config.hf_repo_id,  # e.g. "username/vehicle-insurance-model"
-                filename="model.pkl",  # file name you pushed
-                repo_type="model"
-            )
+    repo_id=self.prediction_pipeline_config.hf_repo_id,
+    filename="model.pkl",
+    repo_type="model"
+)
+
 
             # Load model (MyModel object containing preprocessing & trained model)
             model = joblib.load(model_path)
